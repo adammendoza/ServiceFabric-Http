@@ -8,6 +8,7 @@ install:
   - ps: "&{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}"
   - ps: dnvm install 1.0.0-rc2-20221 -r clr -a x86 -u
   - ps: dnvm install 1.0.0-rc2-20221 -r clr -a x64 -u -p
+  - ps: dnvm alias default 1.0.0-rc2-20221 -r clr -a x64
   - ps: dnvm list
   
   # update project.json versions for continuous delivery to MyGet
