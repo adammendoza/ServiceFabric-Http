@@ -18,14 +18,14 @@
   "dependencies": {
     "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc2-20640",
     "Microsoft.Extensions.Options": "1.0.0-rc2-20640",
-    "Microsoft.ServiceFabric.Services": "1.5.175-preview",
-    "System.Net.Http": "4.0.1-beta-23516"
+    "Microsoft.ServiceFabric.Services": "1.5.175-preview"
   },
 
   "frameworks": {
     "net451": {
       "frameworkAssemblies": {
         "System.ComponentModel": "",
+        "System.Net.Http": "",
         "System.Runtime": "",
         "System.Threading.Tasks": ""
       }
