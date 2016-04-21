@@ -23,7 +23,9 @@
 
   "frameworks": {
     "net451": {
-      "frameworkAssemblies": {}
+      "frameworkAssemblies": {
+        "System.Runtime": ""
+      }
     }
   }
 }
