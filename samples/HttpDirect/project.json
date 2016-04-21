@@ -5,7 +5,7 @@
   },
 
   "dependencies": {
-    "C3.ServiceFabric.HttpCommunication": "",
+    "C3.ServiceFabric.HttpCommunication": "0.4.0-preview-*",
 
     "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-20640",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-20640",
