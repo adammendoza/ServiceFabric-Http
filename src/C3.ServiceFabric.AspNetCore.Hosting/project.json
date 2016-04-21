@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.4.0-rc2-*",
+  "version": "0.4.0-preview-*",
   "description": "ASP.NET Core ServiceFabric hosting library for ASP.NET Core RC2 daily builds",
   "authors": [ "C3 Loyalty Services" ],
   "projectUrl": "https://github.com/c3-ls/ServiceFabric-HttpServiceGateway",
@@ -11,7 +11,7 @@
   },
 
   "dependencies": {
-    "Microsoft.AspNetCore.Hosting": "1.0.0-rc2-20100",
+    "Microsoft.AspNetCore.Hosting": "1.0.0-rc2-20640",
     "Microsoft.ServiceFabric.Services": "1.5.175-preview"
   },
 

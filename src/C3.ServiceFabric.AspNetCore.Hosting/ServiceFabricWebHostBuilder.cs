@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Fabric;
+using Microsoft.Extensions.Logging;
 
 namespace C3.ServiceFabric.AspNetCore.Hosting
 {
@@ -19,7 +19,7 @@ namespace C3.ServiceFabric.AspNetCore.Hosting
             Console.WriteLine("ServiceFabricWebHostBuilder: Constructor");
 
             _builder = new WebHostBuilder()
-                .UseDefaultConfiguration(args);
+                .UseDefaultHostingConfiguration(args);
 
             RunInServiceFabric = string.Equals(_builder.GetSetting("fabric"), "true", StringComparison.OrdinalIgnoreCase);
 
@@ -71,12 +71,6 @@ namespace C3.ServiceFabric.AspNetCore.Hosting
             return _builder.GetSetting(key);
         }
 
-        public IWebHostBuilder UseServer(IServerFactory factory)
-        {
-            _builder.UseServer(factory);
-            return this;
-        }
-
         public IWebHostBuilder UseSetting(string key, string value)
         {
             _builder.UseSetting(key, value);
@@ -87,6 +81,16 @@ namespace C3.ServiceFabric.AspNetCore.Hosting
         {
             _builder.UseStartup(startupType);
             return this;
+        }
+
+        public IWebHostBuilder UseLoggerFactory(ILoggerFactory loggerFactory)
+        {
+            return _builder.UseLoggerFactory(loggerFactory);
+        }
+
+        public IWebHostBuilder ConfigureLogging(Action<ILoggerFactory> configureLogging)
+        {
+            return _builder.ConfigureLogging(configureLogging);
         }
     }
 }
