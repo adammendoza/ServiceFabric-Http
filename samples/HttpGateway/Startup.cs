@@ -20,8 +20,7 @@ namespace HttpGateway
             loggerFactory.AddConsole(LogLevel.Debug);
 
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .AddEnvironmentVariables();
+                .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
         }

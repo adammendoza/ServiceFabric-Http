@@ -18,8 +18,7 @@ namespace HttpDirect
             loggerFactory.AddConsole(LogLevel.Debug);
 
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: false)
-                .AddEnvironmentVariables();
+                .AddJsonFile("appsettings.json", optional: false);
 
             Configuration = builder.Build();
         }
@@ -69,7 +68,6 @@ namespace HttpDirect
         public static void Main(string[] args)
         {
             var builder = new WebHostBuilder()
-                .UseDefaultHostingConfiguration(args)
                 .UseServer("Microsoft.AspNetCore.Server.Kestrel")
                 .UseStartup<Startup>()
                 .Build();

@@ -11,7 +11,8 @@
   },
 
   "dependencies": {
-    "Microsoft.AspNetCore.Hosting": "1.0.0-rc2-20640",
+    "Microsoft.AspNetCore.Hosting": "1.0.0-rc2-20774",
+    "Microsoft.Extensions.Configuration.CommandLine": "1.0.0-rc2-20774",
     "Microsoft.ServiceFabric.Services": "1.5.175-preview"
   },
 

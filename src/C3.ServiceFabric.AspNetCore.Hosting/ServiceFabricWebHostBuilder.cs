@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Fabric;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace C3.ServiceFabric.AspNetCore.Hosting
@@ -18,8 +19,12 @@ namespace C3.ServiceFabric.AspNetCore.Hosting
         {
             Console.WriteLine("ServiceFabricWebHostBuilder: Constructor");
 
+            var config = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .Build();
+
             _builder = new WebHostBuilder()
-                .UseDefaultHostingConfiguration(args);
+                .UseConfiguration(config);
 
             RunInServiceFabric = string.Equals(_builder.GetSetting("fabric"), "true", StringComparison.OrdinalIgnoreCase);
 
