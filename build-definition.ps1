@@ -2,7 +2,7 @@ Properties {
     
     # This number will be appended to all nuget package versions and to the service fabric app versions
     # This should be overwritten by a CI system like VSTS, AppVeyor, TeamCity, ...
-    $BuildNumber = "local-" + ((Get-Date).ToUniversalTime().ToString("MMddHHmm"))
+    $BuildNumber = "l-" + ((Get-Date).ToUniversalTime().ToString("MMddHHmm"))
 
     # The build configuration used for compilation
     $BuildConfiguration = "Release"
