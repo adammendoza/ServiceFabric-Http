@@ -68,7 +68,7 @@ namespace HttpDirect
         public static void Main(string[] args)
         {
             var builder = new WebHostBuilder()
-                .UseServer("Microsoft.AspNetCore.Server.Kestrel")
+                .UseKestrel()
                 .UseStartup<Startup>()
                 .Build();
 
